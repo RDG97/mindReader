@@ -26,10 +26,17 @@ const pages = [
     },
 
     {
-        head: '0 - & \n 1 - @',
-        btnBot: '',
+        head: '0 - & <br> 1 - @ <br> 2 - $ <br> 3 - B <br> ...',
+        btnBot: '<-',
+        btnTop: 'REVEAL',
+        lowerText: 'Find your new number. <br> Note the symbol beside the number',
+    },
+
+    {
+        head: '&',
+        btnBot: '<-',
         btnTop: '',
-        lowerText: '',
+        lowerText: 'Your symbol is <br> &',
     }
 ]
 //an array storing page change functions. i plan to cycle through these with a single button

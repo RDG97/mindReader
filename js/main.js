@@ -23,6 +23,13 @@ const pages = [
         btnBot: '<-',
         btnTop: 'NEXT',
         lowerText: 'Ex: 14 - 5 = 9.  click next to proceed',
+    },
+
+    {
+        head: '0 - & \n 1 - @',
+        btnBot: '',
+        btnTop: '',
+        lowerText: '',
     }
 ]
 //an array storing page change functions. i plan to cycle through these with a single button
@@ -33,7 +40,7 @@ const test = [
     page4c,
 ];
 
-let x = 1;
+let x = 2;
 
 //what the page looks like at the start
 
@@ -57,7 +64,7 @@ function page2c() {
     document.getElementById("lowerText").innerHTML = pages[1].lowerText
 
 };
-
+//                                  IGNORE WILL BE DELETED LATER
 function page3c() {
     document.getElementById("header").innerHTML = pages[2].head;
     document.getElementById("btnBot").innerHTML = pages[2].btnBot;
@@ -73,7 +80,8 @@ function page4c() {
     document.getElementById("lowerText").innerHTML = pages[3].lowerText;
     x++;
     
-}
+};
+//                                        END IGNORE
 
 // reset the mindreader... itll work eventually
 
@@ -88,10 +96,19 @@ function reset() {
 
 //makes the buttons do stuff
 
-btnBot.addEventListener('click', test[0]);
+btnBot.addEventListener('click', page2c);
 
 // x starts with a value of 1. it is increased by 1 in each function
 
-btnTop.addEventListener('click', test[x]);
+btnTop.addEventListener('click', pageUp);
 
 // help: reset not working, auto increase the test array number by one
+
+function pageUp() {
+    document.getElementById("header").innerHTML = pages[x].head;
+    document.getElementById("btnBot").innerHTML = pages[x].btnBot;
+    document.getElementById("btnTop").innerHTML = pages[x].btnTop;
+    document.getElementById("lowerText").innerHTML = pages[x].lowerText;
+    x++;
+    
+};

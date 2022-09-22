@@ -74,11 +74,7 @@ const pages = [
 
 //an array storing page change functions. i plan to cycle through these with a single button
 
-const test = [
-    page2c,
-    page3c,
-    page4c,
-];
+
 
 let x = 2;
 
@@ -104,38 +100,6 @@ function page2c() {
     return x;
 
 };
-//                                  IGNORE WILL BE DELETED LATER
-function page3c() {
-    document.getElementById("header").innerHTML = pages[2].head;
-    document.getElementById("btnBot").innerHTML = pages[2].btnBot;
-    document.getElementById("btnTop").innerHTML = pages[2].btnTop;
-    document.getElementById("lowerText").innerHTML = pages[2].lowerText;
-    x++;
-    
-};
-function page4c() {
-    document.getElementById("header").innerHTML = pages[3].head;
-    document.getElementById("btnBot").innerHTML = pages[3].btnBot;
-    document.getElementById("btnTop").innerHTML = pages[3].btnTop;
-    document.getElementById("lowerText").innerHTML = pages[3].lowerText;
-    x++;
-    
-};
-//                                        END IGNORE
-
-// reset the mindreader... itll work eventually
-
-function reset() {
-    document.getElementById("header").reset();
-    document.getElementById("btnBot").reset(); 
-    document.getElementById("btnTop").reset(); 
-    document.getElementById("lowerText").reset(); 
-};
-
-
-//  console.log(pages[4].head.replace(':0:', symb[0]));
-
-
 
 pages[5].head = pages[5].head.replace(':a:', fart[9])
 pages[5].lowerText = pages[5].lowerText.replace(':a:', fart[9])

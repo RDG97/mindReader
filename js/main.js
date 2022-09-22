@@ -1,3 +1,4 @@
+//creates an array with numbers 0-100
 let N = 0;
 
 let tester = [];
@@ -10,24 +11,22 @@ if (N < 100) {
 };
 }
 setInterval(testa, 50);
-
+// an array of sybols
 let symb = ['!', '@', '#', '$', '%', '^', '&', '*', '(',         
 ];
-
+//randomizes the symbols array
 function randomize(arr) {
     arr.sort(() => Math.random() - 0.5);
   }
   randomize(symb)
 
+// combines number array and symbol array
 let fart = [];
 for (let i=1;i<=11;i++) {
     fart = fart.concat(symb);
 }
-
 let help = []
-
   let arr = symb
-
   for (let i=0;i<99;i++) {
     help.push(i + ':' + fart[i] + '<br>')
   }// objects in objects! here is where all the variables for my pages will be declared and reference from
@@ -36,7 +35,6 @@ const pages = [
         head: 'I can read your mind',
         btnBot: 'Go'
     },
-
     {
         head: 'Pick a number from 1 - 99',
         btnBot: '<-',
@@ -49,21 +47,18 @@ const pages = [
         btnTop: 'NEXT',
         lowerText: 'EX: 14 is 1 + 4 = 5.  Click the next button the proceed',
     },
-
     {
         head: 'Subtract your new number from the original number',
         btnBot: '<-',
         btnTop: 'NEXT',
         lowerText: 'Ex: 14 - 5 = 9.  click next to proceed',
     },
-
     {
         head: help,
         btnBot: '<-',
         btnTop: 'REVEAL',
         lowerText: 'Find your new number. <br> Note the symbol beside the number',
     },
-
     {
         head: ':a:',
         btnBot: '<-',
@@ -71,13 +66,8 @@ const pages = [
         lowerText: 'Your symbol is <br> :a:',
     }
 ];
-
-//an array storing page change functions. i plan to cycle through these with a single button
-
-
-
+// page index variable. starts at 2 because thats where the button its attached to appears
 let x = 2;
-
 //what the page looks like at the start
 
 document.getElementById("header").innerHTML = pages[0].head
@@ -101,20 +91,19 @@ function page2c() {
 
 };
 
+// x starts with a value of 1. it is increased by 1 in each function
+//places correct symbol as the answer
 pages[5].head = pages[5].head.replace(':a:', fart[9])
 pages[5].lowerText = pages[5].lowerText.replace(':a:', fart[9])
 
 //makes the buttons do stuff
-
-
-
 btnBot.addEventListener('click', page2c);
 
 // x starts with a value of 1. it is increased by 1 in each function
 
 btnTop.addEventListener('click', pageUp);
 
-
+//fill page with correct page content. increments X by 1 to give you the correct page the naxe btn push
 function pageUp() {
     document.getElementById("header").innerHTML = pages[x].head;
     document.getElementById("btnBot").innerHTML = pages[x].btnBot;

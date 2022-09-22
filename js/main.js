@@ -1,4 +1,36 @@
-// objects in objects! here is where all the variables for my pages will be declared and reference from
+let N = 0;
+
+let tester = [];
+
+function testa() {
+if (N < 100) {
+    tester.push(N)
+    N++
+    return N;
+};
+}
+setInterval(testa, 50);
+
+let symb = ['!', '@', '#', '$', '%', '^', '&', '*', '(',         
+];
+
+function randomize(arr) {
+    arr.sort(() => Math.random() - 0.5);
+  }
+  randomize(symb)
+
+let fart = [];
+for (let i=1;i<=11;i++) {
+    fart = fart.concat(symb);
+}
+
+let help = []
+
+  let arr = symb
+
+  for (let i=0;i<99;i++) {
+    help.push(i + ':' + fart[i] + '<br>')
+  }// objects in objects! here is where all the variables for my pages will be declared and reference from
 const pages = [
     {
         head: 'I can read your mind',
@@ -26,19 +58,20 @@ const pages = [
     },
 
     {
-        head: '0 - & <br> 1 - @ <br> 2 - $ <br> 3 - B <br> ...',
+        head: help,
         btnBot: '<-',
         btnTop: 'REVEAL',
         lowerText: 'Find your new number. <br> Note the symbol beside the number',
     },
 
     {
-        head: '&',
+        head: ':a:',
         btnBot: '<-',
         btnTop: '',
-        lowerText: 'Your symbol is <br> &',
+        lowerText: 'Your symbol is <br> :a:',
     }
-]
+];
+
 //an array storing page change functions. i plan to cycle through these with a single button
 
 const test = [
@@ -56,9 +89,6 @@ document.getElementById("btnBot").innerHTML = pages[0].btnBot
 document.getElementById("btnTop").style.display = "none";
 document.getElementById("lowerText").style.display = "none";
 
-
-
-
 //page change functions
 
 function page2c() {
@@ -69,6 +99,9 @@ function page2c() {
     document.getElementById("btnTop").innerHTML = pages[1].btnTop
     document.getElementById("btnBot").innerHTML = pages[1].btnBot
     document.getElementById("lowerText").innerHTML = pages[1].lowerText
+    randomize(symb);
+    x = 2;
+    return x;
 
 };
 //                                  IGNORE WILL BE DELETED LATER
@@ -100,8 +133,16 @@ function reset() {
 };
 
 
+//  console.log(pages[4].head.replace(':0:', symb[0]));
+
+
+
+pages[5].head = pages[5].head.replace(':a:', fart[9])
+pages[5].lowerText = pages[5].lowerText.replace(':a:', fart[9])
 
 //makes the buttons do stuff
+
+
 
 btnBot.addEventListener('click', page2c);
 
@@ -109,7 +150,6 @@ btnBot.addEventListener('click', page2c);
 
 btnTop.addEventListener('click', pageUp);
 
-// help: reset not working, auto increase the test array number by one
 
 function pageUp() {
     document.getElementById("header").innerHTML = pages[x].head;
@@ -117,5 +157,5 @@ function pageUp() {
     document.getElementById("btnTop").innerHTML = pages[x].btnTop;
     document.getElementById("lowerText").innerHTML = pages[x].lowerText;
     x++;
-    
 };
+

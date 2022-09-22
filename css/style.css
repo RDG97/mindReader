@@ -12,3 +12,9 @@
     width: 400px;
     height: 500px;
 }
+.header {
+    width: 390px;
+    height: 450px;
+    overflow: hidden;
+
+}

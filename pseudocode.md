@@ -1,17 +1,23 @@
 HTML will be a card with empty divs to be later populated
-New button 
+p class header
+
+start button 
 	Eventlistener
-Resetbutton
+Reset button
 	Event listener
-State (obj)			(each page will have an object like this)
-	Current page: int
-	Example text
-	Btn text: “”
-	Header text: “”
-	helper text: “”
-	Symbols: [  ] (9)
-Randomized symbols: [   ] (100) 
-Answer symbol:
+p class lowerText
+
+state array (called pages)
+	each page will be an object inside this array. set up as following
+	{
+		head: header text. the most important info
+		btnBot: will either say GO to start, or <- for reset
+		btnTop: the big next page button
+		lowerText: secondary info!
+	}	
+
+
+Functions
 
 Pages [
 Btn text: “”
@@ -20,27 +26,31 @@ Btn text: “”
 	Example text: “”
 	]
 
+numbered()
+	N = 0
+	if N < 100
+	push into array .push(N)
+	N++
+	return N
 
-Functions
-	init()
- updatePage()
-	Set to new text
-		If header text
-			Getelementbyid.header = page.headertext
-		If button text
-		Getelementbyid.btn = page.btntext
-			Else change button to hidden
-		(do for all elements)
+
+ pageUp()
+	x = 2   (this function doesnt become necessary until the secon obj in pages array)
+	changes the pages HTML elements with .getElementById
+	set elements to object[x].HTMLelement
+	x++
+
 
 randomizeSymbols()
 	Randomize list of 9
-	Loop to 100
-		Create element
-		I is the number
-		% 9 on the random array is the symbol
-nextpage()
+	arr.sort into math.random
+
+
 reset()
-	Getelementbyid.reset on all elements. Might be necessary for each page change
+	uses .getElementById to change the page back to page 2 (the page after the go button)
+	runs the function randomizeSymbols()
+	sets x = 2 (the page number variable)
+	return x
 
 container OBJ{
 	Pagesarray[

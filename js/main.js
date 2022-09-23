@@ -1,11 +1,11 @@
 //creates an array with numbers 0-100
 let N = 0;
 
-let tester = [];
+let numbered = [];
 
 function testa() {
 if (N < 100) {
-    tester.push(N)
+    numbered.push(N)
     N++
     return N;
 };
@@ -21,14 +21,14 @@ function randomize(arr) {
   randomize(symb)
 
 // combines number array and symbol array
-let fart = [];
+let sym = [];
 for (let i=1;i<=11;i++) {
-    fart = fart.concat(symb);
+    sym = sym.concat(symb);
 }
 let help = []
   let arr = symb
   for (let i=0;i<99;i++) {
-    help.push(i + ':' + fart[i] + '<br>')
+    help.push(i + ' : ' + sym[i] + '<br>')
   }// objects in objects! here is where all the variables for my pages will be declared and reference from
 const pages = [
     {
@@ -93,8 +93,8 @@ function page2c() {
 
 // x starts with a value of 1. it is increased by 1 in each function
 //places correct symbol as the answer
-pages[5].head = pages[5].head.replace(':a:', fart[9])
-pages[5].lowerText = pages[5].lowerText.replace(':a:', fart[9])
+pages[5].head = pages[5].head.replace(':a:', sym[9])
+pages[5].lowerText = pages[5].lowerText.replace(':a:', sym[9])
 
 //makes the buttons do stuff
 btnBot.addEventListener('click', page2c);

@@ -19,13 +19,6 @@ state array (called pages)
 
 Functions
 
-Pages [
-Btn text: “”
-	Header text: “”
-	helper text: “”
-	Example text: “”
-	]
-
 numbered()
 	N = 0
 	if N < 100
@@ -46,11 +39,14 @@ randomizeSymbols()
 	arr.sort into math.random
 
 
-reset()
+page2C()
+	my reset function
 	uses .getElementById to change the page back to page 2 (the page after the go button)
 	runs the function randomizeSymbols()
 	sets x = 2 (the page number variable)
 	return x
+
+
 
 container OBJ{
 	Pagesarray[

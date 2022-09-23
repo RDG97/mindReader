@@ -26,10 +26,9 @@ for (let i=1;i<=11;i++) {
     sym = sym.concat(symb);
 }
 let help = []
-  let arr = symb
   for (let i=0;i<99;i++) {
     help.push(i + ' : ' + sym[i] + '<br>')
-  }// objects in objects! here is where all the variables for my pages will be declared and reference from
+  }// objects in objects! here is where all the variables for my pages will be declared and referenced from
 const pages = [
     {
         head: 'I can read your mind',
@@ -75,7 +74,8 @@ document.getElementById("btnBot").innerHTML = pages[0].btnBot
 document.getElementById("btnTop").style.display = "none";
 document.getElementById("lowerText").style.display = "none";
 
-//page change functions
+//2nd page function and also my reset. set to page[1] and makes the top button and lower text appear.
+//also randomizes the sybol array
 
 function page2c() {
     document.getElementById("header").innerHTML = pages[1].head
@@ -91,7 +91,7 @@ function page2c() {
 
 };
 
-// x starts with a value of 1. it is increased by 1 in each function
+
 //places correct symbol as the answer
 pages[5].head = pages[5].head.replace(':a:', sym[9])
 pages[5].lowerText = pages[5].lowerText.replace(':a:', sym[9])
@@ -99,7 +99,7 @@ pages[5].lowerText = pages[5].lowerText.replace(':a:', sym[9])
 //makes the buttons do stuff
 btnBot.addEventListener('click', page2c);
 
-// x starts with a value of 1. it is increased by 1 in each function
+// x starts with a value of 2. it is increased by 1 each time pageUp is ran
 
 btnTop.addEventListener('click', pageUp);
 
